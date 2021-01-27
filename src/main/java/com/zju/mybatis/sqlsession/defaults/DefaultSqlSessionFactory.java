@@ -1,8 +1,8 @@
-package org.example.mybatis.sqlsession.defaults;
+package com.zju.mybatis.sqlsession.defaults;
 
-import org.example.mybatis.cfg.Configuration;
-import org.example.mybatis.sqlsession.SqlSession;
-import org.example.mybatis.sqlsession.SqlSessionFactory;
+import com.zju.mybatis.cfg.Configuration;
+import com.zju.mybatis.sqlsession.SqlSession;
+import com.zju.mybatis.sqlsession.SqlSessionFactory;
 
 
 /**
@@ -10,7 +10,7 @@ import org.example.mybatis.sqlsession.SqlSessionFactory;
  * @Company http://www.ithiema.com
  * SqlSessionFactory接口的实现类
  */
-public class DefaultSqlSessionFactory implements SqlSessionFactory{
+public class DefaultSqlSessionFactory implements SqlSessionFactory {
 
     private Configuration cfg;
 

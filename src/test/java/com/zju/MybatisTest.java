@@ -1,9 +1,11 @@
-package org.example;
+package com.zju;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.zju.mybatis.IUserDao;
+import com.zju.mybatis.User;
 
 import java.io.InputStream;
 import java.util.List;

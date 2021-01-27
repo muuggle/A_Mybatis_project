@@ -1,6 +1,6 @@
-package org.example.mybatis.utils;
+package com.zju.mybatis.utils;
 
-import org.example.mybatis.cfg.Configuration;
+import com.zju.mybatis.cfg.Configuration;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -1,4 +1,4 @@
-package org.example.mybatis.cfg;
+package com.zju.mybatis.cfg;
 
 import java.util.Map;
 

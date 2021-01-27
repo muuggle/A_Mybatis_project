@@ -1,6 +1,6 @@
-package org.example.mybatis.io;
+package com.zju.mybatis.io;
 
-import org.apache.ibatis.io.Resources;
+
 
 import java.io.InputStream;
 
@@ -8,7 +8,7 @@ import java.io.InputStream;
  * 用于读取配置文件的类
  */
 
-public class Resource {
+public class Resources {
     public static InputStream getResourceAsStream(String xmlPath) {
         return Resources.class.getClassLoader().getResourceAsStream(xmlPath);
     }

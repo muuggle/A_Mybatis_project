@@ -1,4 +1,4 @@
-package org.example.mybatis.sqlsession;
+package com.zju.mybatis.sqlsession;
 
 /**
  * @author 黑马程序员

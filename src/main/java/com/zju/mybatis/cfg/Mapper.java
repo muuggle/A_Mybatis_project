@@ -1,4 +1,4 @@
-package org.example.mybatis.cfg;
+package com.zju.mybatis.cfg;
 /**
  * 用于封装查询时的必要信息
  */

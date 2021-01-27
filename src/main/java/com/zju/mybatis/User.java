@@ -1,4 +1,4 @@
-package org.example;
+package com.zju.mybatis;
 
 import java.io.Serializable;
 import java.util.Date;

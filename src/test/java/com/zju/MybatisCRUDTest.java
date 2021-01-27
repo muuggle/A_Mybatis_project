@@ -2,6 +2,7 @@ package com.zju;
 
 
 import com.zju.CRUDonDao.IUserDao2;
+import com.zju.CRUDonDao.QueryVo;
 import com.zju.mybatis.User;
 import com.zju.mybatis.io.Resources;
 import com.zju.mybatis.sqlsession.SqlSession;
@@ -101,16 +102,29 @@ public class MybatisCRUDTest {
 //        System.out.println(res);
 //    }
     @Test
-    public void testFindByName() throws Exception{
-        List<User> users=userDao2.findByName("%王%");
-         for (User user:users){
-             System.out.println(user);
-         }
+    public void testFindByName() throws Exception {
+        List<User> users = userDao2.findByName("%王%");
+        for (User user : users) {
+            System.out.println(user);
+        }
     }
 
     @Test
-    public void testFindTotal() throws Exception{
-        int res=userDao2.findTotal();
+    public void testFindTotal() throws Exception {
+        int res = userDao2.findTotal();
         System.out.println(res);
+    }
+
+    @Test
+    public void testFindByQueryVo() {
+        QueryVo vo = new QueryVo();
+        User user = new User();
+        user.setUsername("%王%");
+        vo.setUser(user);
+
+        List<User> users = userDao2.findByVo(vo);
+        for (User u : users) {
+            System.out.println(u);
+        }
     }
 }

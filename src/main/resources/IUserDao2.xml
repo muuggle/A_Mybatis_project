@@ -5,11 +5,11 @@
 <mapper namespace="com.zju.mybatis.IUserDao">
     <!--配置查询所有-->
     <select id="findAll" resultType="com.zju.CRUDonDao.IUserDao2">
-        select * from user
+        select * from user;
     </select>
     <!--配置根据ID查询-->
     <select id="findByID" resultType="com.zju.CRUDonDao.IUserDao2" parameterType="=int">
-        select * from user where id=#{uid}
+        select * from user where id=#{uid};
     </select>
     <!--保存用户-->
     <insert id="saveUser" parameterType="com.zju.mybatis.User">
@@ -21,18 +21,23 @@
     <!--更新用户-->
     <update id="updateUser" parameterType="com.zju.mybatis.User">
         update user set username=#{username},birthday=#{birthday},sex=#{sex},address=#{address}
-        where id=#{id}
+        where id=#{id};
     </update>
     <!--删除用户-->
     <delete id="deleteUser" parameterType="java.lang.Integer">
-        delete from user where id=#{uid}
+        delete from user where id=#{uid};
     </delete>
     <!--模糊查询-->
     <select id="findByName" parameterType="String" resultType="com.zju.mybatis.User">
-        select * from user where username like #{username}
+        select * from user where username like #{username};
     </select>
     <!--查询总记录条数-->
     <select id="findTotal" resultType="int">
         select count(*) from user;
+    </select>
+
+    <!--根据用户名称模糊查询，参数变成一个QueryVo对象了-->
+    <select id="findByVo" resultType="com.zju.mybatis.User" parameterType="com.zju.CRUDonDao.QueryVo">
+        select * from user where username like #{user.username};
     </select>
 </mapper>

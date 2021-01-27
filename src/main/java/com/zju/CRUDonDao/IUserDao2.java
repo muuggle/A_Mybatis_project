@@ -47,5 +47,11 @@ public interface IUserDao2 {
      */
     int findTotal();
 
+    /**
+     * 根据QueryVo中的条件查询用户
+     */
+    List<User> findByVo(QueryVo vo);
+
+
 }
 

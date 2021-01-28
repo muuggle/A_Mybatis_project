@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zju.mybatis3.IAccountDao2">
+    <!--配置查询所有操作-->
+    <select id="findAll" resultType="com.zju.mybatis3.Account2">
+        select a.*,u.username,u.address from account a,user u where a.uid =u.id;
+    </select>
+    <!--建立对应关系-->
+    <resultMap id="account" type="accountMap">
+        <id column="aid" property="id"/>
+        <result column="uid" property="uid"/>
+        <result column="money" property="money"/>
+        <!--用于指定从表放的引用实体属性-->
+        <association property="user" javaType="user">
+            <id column="id" property="id"/>
+            <result column="username" property="username"/>
+            <result column="sex" property="sex"/>
+            <result column="birthday" property="birthday"/>
+            <result column="address" property="address"/>
+        </association>
+    </resultMap>
+</mapper>

@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mapper namespace="com.zju.mybatis.IUserDao">
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zju.mybatis1.IUserDao">
+    <resultMap id="user" type="userMap">
+        <id column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="address" property="address"/>
+        <result column="sex" property="sex"/>
+        <result column="birthday" property="birthday"/>
+        <!-- collection是用于建立一对多中集合属性的对应关系
+         ofType用于指定集合元素的数据类型 -->
+        <collection property="accounts" ofType="account">
+            <id column="aid" property="id"/>
+            <result column="uid" property="uid"/>
+            <result column="money" property="money"/>
+        </collection>
+    </resultMap>
     <!--配置查询所有-->
-    <select id="findAll" resultType="com.zju.mybatis.IUserDao">
-        select * from user
+    <select id="findAll" resultType="userMap">
+        select u.*,a.id as aid ,a.uid,a.money
+        from user u left outer join account a on u.id =a.uid
     </select>
 </mapper>

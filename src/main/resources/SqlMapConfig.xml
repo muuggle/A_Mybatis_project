@@ -15,7 +15,7 @@
 
     <!--告知mybatis映射的位置-->
     <mappers>
-        <mapper resource="IUserDao2.xml"/>
+        <mapper resource="IUserDao3.xml"/>
     </mappers>
 
 </configuration>
